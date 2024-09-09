@@ -1,12 +1,9 @@
-<!-- resources/views/home.blade.php -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daftar Buku</title>
-    <!-- Tambahkan CSS jika diperlukan -->
     <style>
         table {
             width: 100%;
@@ -16,7 +13,7 @@
             border: 1px solid black;
         }
         th, td {
-            padding: 8px;
+            padding: 10px;
             text-align: left;
         }
         th {
@@ -26,21 +23,22 @@
 </head>
 <body>
     <h1>Daftar Buku</h1>
+
     <table>
         <thead>
             <tr>
-                <th>Judul</th>
+                <th>Judul Buku</th>
                 <th>Penulis</th>
                 <th>Tahun Terbit</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($books as $item)
-                <tr>
-                    <td>{{ $item['judul'] }}</td>
-                    <td>{{ $item['penulis'] }}</td>
-                    <td>{{ $item['tahun_terbit'] }}</td>
-                </tr>
+            @foreach($books as $book)
+            <tr>
+                <td>{{ $book['title'] }}</td>
+                <td>{{ $book['author'] }}</td>
+                <td>{{ $book['year'] }}</td>
+            </tr>
             @endforeach
         </tbody>
     </table>
